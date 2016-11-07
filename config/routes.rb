@@ -1,4 +1,32 @@
 Rails.application.routes.draw do
+  namespace :admin do
+  get 'products/index'
+  end
+
+  namespace :admin do
+  get 'products/new'
+  end
+
+  namespace :admin do
+  get 'products/create'
+  end
+
+  namespace :admin do
+  get 'products/show'
+  end
+
+  namespace :admin do
+  get 'products/edit'
+  end
+
+  namespace :admin do
+  get 'products/update'
+  end
+
+  namespace :admin do
+  get 'products/destroy'
+  end
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
