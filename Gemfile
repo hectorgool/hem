@@ -45,3 +45,7 @@ group :development do
   gem 'spring'
 end
 
+#santo
+# rails s Puma
+# rackup -s Puma
+gem 'puma'
