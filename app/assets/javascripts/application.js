@@ -13,4 +13,16 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require bootstrap-sprockets
+//= require leaflet
+//= require photoswipe
+//= require bootstrap-datepicker
+//= require moment
+//= require bootstrap-datetimepicker
+//= require lodash
+//= require react
+//= require react_ujs
+//= require flux
+//= require eventemitter
+//= require santo
 //= require_tree .

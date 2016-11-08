@@ -1,0 +1,66 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+//santo
+body { 
+  /* 
+  background: #FCFCFC;
+  background: #E6E6FA;
+  background: #F0F2F1;
+  */
+  background: #f4f5fc;
+  padding-top: 10px;
+} 
+
+.navbar-default {
+  background-color: #FFFFFF;
+}
+
+.panel-heading > .panel-heading_santo {
+  background-color: #FFFFFF;
+  padding: 0px 0px;
+}
+
+.panel-body > .panel-body_image {
+  background-color: #FFFFFF;
+  padding: 0px 0px;
+}
+
+
+.footer { 
+  background-color: #242729;
+  color:#ACD45D;
+  height: 300px; 
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+/*
+.footer { 
+  background-color: #242729;
+  color:#E1D464;
+  height: 300px; 
+}
+*/
+
+.panel-height {
+  height: 350px; 
+}
+
+#mymap { 
+  height: 300px; 
+}
+
+
+footer-background-color{
+  background-color: #272B2D;
+}
+
+.apps{
+  height: 50px;
+}
+
+.jumbotron {
+background-image: url(asset-path('1.jpg'));
+background-size: cover;}

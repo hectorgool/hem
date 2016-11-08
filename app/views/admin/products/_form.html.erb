@@ -1,0 +1,16 @@
+<%= simple_form_for([:admin, @product]) do |f| %>
+
+  <%= f.input :name %>
+
+  <label for="description">Description</label>
+
+  <%= f.input :description, 
+    as: :text, 
+    label: false,
+    class: 'form-control input-lg', 
+    rows: '100'
+  %>
+
+  <%= f.button :submit, class: 'btn btn-info btn-lg btn-block' %>
+
+<% end %>
