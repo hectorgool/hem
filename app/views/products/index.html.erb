@@ -2,8 +2,8 @@
 <h1>
   Productos
   <% admins_only do %>
-    <%= link_to new_admin_product_url, :class => 'btn btn-info btn-lg pull-right', :id => 'new-tour' do %>
-      <i class="glyphicon glyphicon-plus new-tour"></i> New Tour
+    <%= link_to new_admin_product_url, :class => 'btn btn-info btn-lg pull-right', :id => 'new-product' do %>
+      <i class="glyphicon glyphicon-plus new-product"></i> New Tour
     <% end %>
   <% end %>
 </h1>
@@ -46,7 +46,17 @@
 
           <div class="panel-body_image">
 
+            <%= link_to product do %>
 
+              <% if product.attachments.any? %>
+                <% product.attachments.each_with_index do |attachment, index| %>
+                  <% if index == 0 %>
+                    <%= image_tag attachment.file.url, class: 'img-responsive', alt: product.name %>
+                  <% end %>
+                <% end %>
+              <% end %>              
+
+            <% end %>
 
           </div>
           

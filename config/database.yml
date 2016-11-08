@@ -81,6 +81,6 @@ test:
 production:
   <<: *default
   database: hem_production
-  username: santo
+  username: hem
   #password: <%= ENV['HEM_DATABASE_PASSWORD'] %>
   password: asdfasdf

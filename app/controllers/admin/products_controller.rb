@@ -7,6 +7,7 @@ class Admin::ProductsController < ApplicationController
 
   def new
     @product = Product.new
+    @product.attachments.build
   end
 
   def create
@@ -51,7 +52,7 @@ class Admin::ProductsController < ApplicationController
     end 
   
     def product_params
-      params.require(:product).permit(:name, :description, :price, :latitude, :longitude, attachments_attributes: [:file, :file_cache])    
+      params.require(:product).permit(:name, :description, attachments_attributes: [:file, :file_cache])    
     end
 
 end

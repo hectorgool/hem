@@ -7,17 +7,17 @@ CREATE DATABASE "hem_development" WITH ENCODING 'UTF8';
 CREATE DATABASE "hem_test" WITH ENCODING 'UTF8';
 CREATE DATABASE "hem_production" WITH ENCODING 'UTF8';
 
-DROP USER "santo";
-CREATE USER "santo" WITH PASSWORD 'asdfasdf';
-ALTER USER "santo" WITH SUPERUSER;
+DROP USER "hem";
+CREATE USER "hem" WITH PASSWORD 'asdfasdf';
+ALTER USER "hem" WITH SUPERUSER;
 
-GRANT ALL PRIVILEGES ON DATABASE "hem_development" TO santo;
-GRANT ALL PRIVILEGES ON DATABASE "hem_test" TO santo;
-GRANT ALL PRIVILEGES ON DATABASE "hem_production" TO santo;
+GRANT ALL PRIVILEGES ON DATABASE "hem_development" TO hem;
+GRANT ALL PRIVILEGES ON DATABASE "hem_test" TO hem;
+GRANT ALL PRIVILEGES ON DATABASE "hem_production" TO hem;
 
-ALTER DATABASE "hem_development" OWNER TO santo;
-ALTER DATABASE "hem_test" OWNER TO santo;
-ALTER DATABASE "hem_production" OWNER TO santo;
+ALTER DATABASE "hem_development" OWNER TO hem;
+ALTER DATABASE "hem_test" OWNER TO hem;
+ALTER DATABASE "hem_production" OWNER TO hem;
 
-ALTER USER santo CREATEDB;
+ALTER USER hem CREATEDB;
 
