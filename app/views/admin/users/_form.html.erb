@@ -1,0 +1,21 @@
+<%= simple_form_for([:admin, @user]) do |f| %>
+
+  <%= f.input :firstname, autofocus: true  %>
+
+  <%= f.input :lastname %>
+
+	<%= f.input :email %>
+
+	<%= f.input :password, autocomplete: "off" %>
+
+	<% if @minimum_password_length %>
+	  <!--<em>(<%= @minimum_password_length %> characters minimum)</em>-->
+	<% end %>
+
+	<%= f.input :password_confirmation, autocomplete: "off" %>  
+
+  <%= f.input :admin, label: "Is an admin?" %>
+
+  <%= f.button :submit, class: 'btn btn-info btn-lg btn-block' %>
+
+<% end %>

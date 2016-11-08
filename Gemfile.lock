@@ -274,13 +274,10 @@ GEM
       mini_portile2 (~> 2.1.0)
     orm_adapter (0.5.0)
     pg (0.19.0)
-<<<<<<< HEAD
-    puma (3.6.0)
-=======
     photoswipe-rails (4.1.1)
+    puma (3.6.0)
     pundit (1.1.0)
       activesupport (>= 3.0.0)
->>>>>>> c77074121a349f4b980bc7c412c813144c2cd07d
     rack (1.6.4)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -428,12 +425,9 @@ DEPENDENCIES
   lodash-rails
   momentjs-rails (>= 2.9.0)
   pg (~> 0.15)
-<<<<<<< HEAD
-  puma
-=======
   photoswipe-rails (~> 4.1, >= 4.1.1)
+  puma
   pundit (~> 1.1)
->>>>>>> c77074121a349f4b980bc7c412c813144c2cd07d
   rails (= 4.2.6)
   react-rails
   rspec-rails (~> 3.4.2)

@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
 
+  devise_for :users
+
+  #santo
+  devise_scope :user do
+    get '/users' => 'devise/registrations#new'
+    get '/users/password' => 'devise/passwords#new'
+  end
+
   # namespace :admin do
   # get 'products/index'
   # end
@@ -28,12 +36,23 @@ Rails.application.routes.draw do
   # get 'products/destroy'
   # end
 
+  root 'products#index'
+
   namespace :admin do
     
     root "products#index"
-    resources :products
+    resources :products, only: [:new, :create, :edit, :update, :destroy]
+    
+    resources :users do
+      member do
+        patch :archive
+      end
+    end
     
   end
+
+  #santo
+  resources :products, only: [:index, :show]
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

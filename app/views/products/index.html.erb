@@ -1,0 +1,103 @@
+
+<h1>
+  Productos
+  <% admins_only do %>
+    <%= link_to new_admin_product_url, :class => 'btn btn-info btn-lg pull-right', :id => 'new-tour' do %>
+      <i class="glyphicon glyphicon-plus new-tour"></i> New Tour
+    <% end %>
+  <% end %>
+</h1>
+
+<br />
+<%= 
+  #render "layouts/search" 
+%>  
+
+<% @products.in_groups_of(4, false).each do |group| %>
+  <div class="row">
+    <% group.each do |product| %>
+     
+      <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+        <div class="panel panel-default">
+
+          <% if user_signed_in? %>
+            <% admins_only do %>
+              <div class="panel-body">   
+                <div class="pull-right">
+                                  
+                  <%= link_to product_url(product.id), :class => "btn btn-default btn-lg" do %>
+                    <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
+                  <% end %>
+                  <%= link_to edit_admin_product_path(product.id), :class => "btn btn-default btn-lg" do %>
+                    <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                  <% end %>
+                  <%= link_to admin_product_path(product.id),
+                    method: :delete,
+                    data: { confirm: "Are you sure you want to delete this product?" },
+                    class: "btn btn-default btn-lg" do %>
+                    <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                  <% end %>
+                  <!--<h6><small>Created: <%= time_ago_in_words(product.created_at) %> ago</small></h6>-->
+                  
+                </div>
+              </div>
+            <% end %>
+          <% end %>
+
+          <div class="panel-body_image">
+
+
+
+          </div>
+          
+          <div class="panel-body panel-height">
+            <p class="text-right">
+
+              <a class="btn btn-social-icon btn-lg btn-twitter">
+                <i class="fa fa-twitter"></i>
+              </a>
+              <a class="btn btn-social-icon btn-lg btn-pinterest">
+                <i class="fa fa-pinterest"></i>
+              </a>
+              <a class="btn btn-social-icon btn-lg btn-facebook">
+                <i class="fa fa-facebook"></i>
+              </a>
+              <a class="btn btn-social-icon btn-lg btn-google">
+                <i class="fa fa-google-plus"></i>
+              </a>
+
+            </p>
+            <p class="text-left">
+              <h3>
+                <%= link_to product.name, product %>
+                <span class="pull-right">
+                  <!--10 <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>-->
+                </span>
+              </h3>
+            </p>
+            <h4>
+              <p>
+                <!--$MNX-->
+              </p>
+              <p>
+                <!--<span class="text-info">by @santo</span>-->
+              </p>
+            </h4>
+            <p class="text-left">
+              <%= sanitize(product.description) %>
+            </p>
+          </div>
+          <div class="panel-body">
+       
+          </div>
+        </div>
+      </div>
+
+    <% end %>
+  </div>
+<% end %>
+
+<button type="button" class="btn btn-default btn-lg btn-block">
+  Load more
+</button>
+<br />
