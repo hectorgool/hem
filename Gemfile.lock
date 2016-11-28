@@ -413,6 +413,7 @@ DEPENDENCIES
   factory_girl_rails (~> 4.5)
   flux-rails-assets
   fog
+  fog-aws
   font-awesome-rails
   friendly_id (~> 5.1)
   geocoder

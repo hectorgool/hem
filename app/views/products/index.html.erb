@@ -1,12 +1,15 @@
-
-<h1>
-  Productos
-  <% admins_only do %>
-    <%= link_to new_admin_product_url, :class => 'btn btn-info btn-lg pull-right', :id => 'new-product' do %>
-      <i class="glyphicon glyphicon-plus new-product"></i> New Tour
-    <% end %>
-  <% end %>
-</h1>
+<div class="panel panel-default">
+  <div class="panel-body">
+    <h1>
+      Productos
+      <% admins_only do %>
+        <%= link_to new_admin_product_url, :class => 'btn btn-info btn-lg pull-right', :id => 'new-product' do %>
+          <i class="glyphicon glyphicon-plus new-product"></i> Agregar Producto
+        <% end %>
+      <% end %>
+    </h1>
+  </div>
+</div>
 
 <br />
 <%= 
@@ -48,9 +51,11 @@
 
             <%= link_to product do %>
 
+              <% len = product.attachments.length %>
+
               <% if product.attachments.any? %>
                 <% product.attachments.each_with_index do |attachment, index| %>
-                  <% if index == 0 %>
+                  <% if index+1 == len %>
                     <%= image_tag attachment.file.url, class: 'img-responsive', alt: product.name %>
                   <% end %>
                 <% end %>
@@ -61,6 +66,7 @@
           </div>
           
           <div class="panel-body panel-height">
+            <!--  
             <p class="text-right">
 
               <a class="btn btn-social-icon btn-lg btn-twitter">
@@ -77,6 +83,7 @@
               </a>
 
             </p>
+            -->
             <p class="text-left">
               <h3>
                 <%= link_to product.name, product %>
@@ -107,7 +114,3 @@
   </div>
 <% end %>
 
-<button type="button" class="btn btn-default btn-lg btn-block">
-  Load more
-</button>
-<br />

@@ -1,7 +1,7 @@
 
 <%= f.simple_fields_for :attachments, child_index: index do |ff| %>
   <%= 
-    ff.input :file, as: :file 
+    ff.input :file, as: :file, title: ' ' 
   %>
   <%= ff.input :file_cache, as: :hidden %>
 <% end %>

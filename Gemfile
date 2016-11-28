@@ -72,6 +72,9 @@ gem 'carrierwave'
 gem 'fog'
 
 #santo
+gem 'fog-aws'
+
+#santo
 gem 'bootstrap-datepicker-rails'
 
 #santo
