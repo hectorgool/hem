@@ -94,6 +94,8 @@ gem 'stripe'
 # rackup -s Puma
 gem "puma", group: :production
 
+# santo
+gem 'io-console', '~> 0.4.6'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
