@@ -27,28 +27,17 @@ Some setup you must do manually if you haven't yet:
 
 ===============================================================================
 
-            <%= link_to product do %>
+<%= link_to product do %>
 
-              <% if product.attachments.any? %>
-                <% product.attachments.each_with_index do |attachment, index| %>
-                  <% if index == 0 %>
-                    <%= image_tag attachment.file.url, class: 'img-responsive', alt: product.name %>
-                  <% end %>
-                <% end %>
-              <% end %>              
+  <% if product.attachments.any? %>
+    <% product.attachments.each_with_index do |attachment, index| %>
+      <% if index == 0 %>
+        <%= image_tag attachment.file.url, class: 'img-responsive', alt: product.name %>
+      <% end %>
+    <% end %>
+  <% end %>              
 
-            <% end %>
+<% end %>
 
-hecho_en_mexico_27_diciembre_2016
-
-
-hem.c4x99qmb12el.us-west-2.rds.amazonaws.com:5432 
-
-3+taeZ00
-
-
-
-hem.c4x99qmb12el.us-west-2.rds.amazonaws.com
-
-
-
+rails g migration add_approved_to_products approved:boolean
+rails g migration add_approved_to_products approved:boolean

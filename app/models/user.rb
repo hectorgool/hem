@@ -23,4 +23,7 @@ class User < ActiveRecord::Base
 		archived_at.nil? ? super : :archived
 	end
 
+  # santo
+  has_many :products, dependent: :destroy
+
 end

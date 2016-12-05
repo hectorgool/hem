@@ -4,9 +4,9 @@ CarrierWave.configure do |config|
     :provider              => 'AWS',                        # required
     :aws_access_key_id     => ENV['S3_KEY'],                # required
     :aws_secret_access_key => ENV['S3_SECRET'],             # required
-    :region                => 'eu-west-1',                  # optional, defaults to 'us-east-1'
-    :host                  => 'hem27nov2016.s3-website-us-west-2.amazonaws.com',        # optional, defaults to nil
-    :endpoint              => 'http://hem27nov2016.s3-website-us-west-2.amazonaws.com/' # optional, defaults to nil
+    :region                => ENV['S3_REGION'],                  # optional, defaults to 'us-east-1'
+    :host                  => ENV['S3_HOST'],        # optional, defaults to nil
+    :endpoint              => ENV['S3_ENDPOINT'] # optional, defaults to nil
   }
   config.fog_directory  = 'pics'                            # required
   config.fog_public     = false                             # optional, defaults to true

@@ -92,7 +92,8 @@ gem 'stripe'
 #santo
 # rails s Puma
 # rackup -s Puma
-gem 'puma'
+gem "puma", group: :production
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

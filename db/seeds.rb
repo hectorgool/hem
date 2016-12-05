@@ -13,6 +13,11 @@ unless User.exists?(email: "santo@santo.com")
 end
 
 #santo. create user
+unless User.exists?(email: "erick.gpea@gmail.com")
+  User.create!(firstname: "Erick", lastname: "Aponte", email: "erick.gpea@gmail.com", password: "asdfasdf")
+end
+
+#santo. create user
 unless User.exists?(email: "hectorgool@gmail.com")
   User.create!(firstname: "Hector", lastname: "Gonzalez Olmos", email: "hectorgool@gmail.com", password: "asdfasdf")
 end

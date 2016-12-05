@@ -12,7 +12,8 @@ class Admin::ProductsController < ApplicationController
 
   def create
     @product = Product.new(product_params)
-    #@product.user = current_user
+    @product.approved = true
+    @product.user = current_user
     if @product.save
       flash[:notice] = "Product has been created."
       redirect_to @product
@@ -52,7 +53,7 @@ class Admin::ProductsController < ApplicationController
     end 
   
     def product_params
-      params.require(:product).permit(:name, :description, attachments_attributes: [:file, :file_cache])    
+      params.require(:product).permit(:name, :description, :approved, attachments_attributes: [:file, :file_cache])    
     end
 
 end
