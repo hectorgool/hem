@@ -41,3 +41,19 @@ Some setup you must do manually if you haven't yet:
 
 rails g migration add_approved_to_products approved:boolean
 rails g migration add_approved_to_products approved:boolean
+
+
+bundle install --without=production
+
+bundle run rake db:migrate
+bundle run rake db:seed
+bundle exec rake assets:precompile
+bundle exec rake db:migrate RAILS_ENV=production
+
+SECRET_KEY_BASE=`rake secret` rails s -e production
+
+
+bundle exec puma -t 5:5 -p 3000 -e ${RACK_ENV:-development}
+
+
+gem install io-console

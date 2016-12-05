@@ -411,6 +411,7 @@ DEPENDENCIES
   carrierwave
   coffee-rails (~> 4.1.0)
   devise
+  execjs (~> 2.7)
   factory_girl_rails (~> 4.5)
   flux-rails-assets
   fog
