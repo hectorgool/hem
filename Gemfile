@@ -95,9 +95,10 @@ gem 'stripe'
 gem "puma", group: :production
 
 # santo
-gem 'io-console', '~> 0.4.6'
+#gem 'io-console', '~> 0.4.6'
 
-gem 'execjs', '~> 2.7'
+#gem 'execjs', '~> 2.7'
+#gem 'therubyracer', :platforms => :ruby
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
