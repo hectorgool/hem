@@ -57,3 +57,9 @@ bundle exec puma -t 5:5 -p 3000 -e ${RACK_ENV:-development}
 
 
 gem install io-console
+
+
+
+
+
+    :provider               => 'AWS',
