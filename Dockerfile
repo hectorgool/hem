@@ -1,7 +1,4 @@
-#https://blog.codeship.com/deploying-docker-rails-app/
 #docker run --name hem -p 80:3000 -d hem:0
-#docker run -d --name hem -p 80:3000 -e SECRET_KEY_BASE=`rake secret` hem:0
-#docker exec rails-server env
 FROM ruby
 
 RUN apt-get update \
@@ -22,11 +19,6 @@ COPY . .
 
 # Precompile Rails assets
 RUN bundle exec rake assets:precompile
-RUN bundle exec rake db:migrate
-RUN bundle exec rake db:seed
-
 
 EXPOSE 3000
 CMD ["rails", "s", "Puma", "-b", "0.0.0.0"]
-
-#CMD bundle exec puma -C config/puma.rb
