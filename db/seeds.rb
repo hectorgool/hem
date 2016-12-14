@@ -14,7 +14,7 @@ end
 
 #santo. create user
 unless User.exists?(email: "erick.gpea@gmail.com")
-  User.create!(firstname: "Erick", lastname: "Aponte", email: "erick.gpea@gmail.com", password: "asdfasdf")
+  User.create!(firstname: "Erick", lastname: "Aponte", email: "erick.gpea@gmail.com", password: "asdfasdf", admin: true)
 end
 
 #santo. create user
