@@ -1,15 +1,15 @@
-<div class="panel panel-default">
-  <div class="panel-body">
-    <h1>
-      Productos
-      <% admins_only do %>
+<% admins_only do %>
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <h1>
+        Productos
         <%= link_to new_admin_product_url, :class => 'btn btn-info btn-lg pull-right', :id => 'new-product' do %>
           <i class="glyphicon glyphicon-plus new-product"></i> Agregar Producto
         <% end %>
-      <% end %>
-    </h1>
+      </h1>
+    </div>
   </div>
-</div>
+<% end %>
 
 <br />
 <%= 
@@ -84,25 +84,16 @@
 
             </p>
             -->
-            <p class="text-left">
-              <h3>
+
+            <dl>
+              <dt>
                 <%= link_to product.name, product %>
-                <span class="pull-right">
-                  <!--10 <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>-->
-                </span>
-              </h3>
-            </p>
-            <h4>
-              <p>
-                <!--$MNX-->
-              </p>
-              <p>
-                <!--<span class="text-info">by @santo</span>-->
-              </p>
-            </h4>
-            <p class="text-left">
-              <%= sanitize(product.description) %>
-            </p>
+              </dt>
+              <dd>
+                <%= product.description %>
+              </dd>
+            </dl>
+
           </div>
           <div class="panel-body">
        
