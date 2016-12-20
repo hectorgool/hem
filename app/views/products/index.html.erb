@@ -105,3 +105,11 @@
   </div>
 <% end %>
 
+<div class="text-center">
+  <nav aria-label="Page navigation">
+    <%= paginate @products,
+      :theme => 'twitter-bootstrap-3',
+      :pagination_class => "pagination-lg"
+    %>
+  </nav>
+</div>

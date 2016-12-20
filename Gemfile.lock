@@ -50,6 +50,9 @@ GEM
       debug_inspector (>= 0.0.1)
     bootstrap-datepicker-rails (1.6.4.1)
       railties (>= 3.0)
+    bootstrap-kaminari-views (0.0.5)
+      kaminari (>= 0.13)
+      rails (>= 3.1)
     bootstrap-sass (3.3.7)
       autoprefixer-rails (>= 5.2.1)
       sass (>= 3.3.4)
@@ -252,6 +255,9 @@ GEM
       railties (>= 4.2.0)
       thor (>= 0.14, < 2.0)
     json (1.8.3)
+    kaminari (0.17.0)
+      actionpack (>= 3.0.0)
+      activesupport (>= 3.0.0)
     leaflet-rails (0.7.7)
     lodash-rails (4.16.4)
       railties (>= 3.1)
@@ -398,6 +404,7 @@ PLATFORMS
 
 DEPENDENCIES
   bootstrap-datepicker-rails
+  bootstrap-kaminari-views
   bootstrap-sass
   bootstrap-social-rails
   bootstrap3-datetimepicker-rails (~> 4.17.42)
@@ -415,6 +422,7 @@ DEPENDENCIES
   geocoder
   jbuilder (~> 2.0)
   jquery-rails
+  kaminari
   leaflet-rails (~> 0.7.7)
   lodash-rails
   mini_magick

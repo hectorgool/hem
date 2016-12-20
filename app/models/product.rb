@@ -11,4 +11,7 @@ class Product < ActiveRecord::Base
   #santo
   belongs_to :user
   
+  # santo
+  paginates_per 12
+
 end

@@ -90,6 +90,10 @@ gem 'lodash-rails'
 #santo
 gem 'stripe'
 
+# santo
+gem 'kaminari'
+gem 'bootstrap-kaminari-views'
+
 #santo
 # rails s Puma
 # rackup -s Puma
