@@ -1,13 +1,14 @@
 <%= simple_form_for([:admin, @product]) do |f| %>
 
-  <%= f.input :name %>
+  <%= f.input :name, label: '', placeholder: 'Nombre' %>
 
-  <label for="description">Descripción</label>
+  <!--<label for="description">Descripción</label>-->
 
   <%= f.input :description, 
     as: :text, 
     label: false,
-    class: 'form-control input-lg', 
+    class: 'form-control input-lg',
+    placeholder: 'Descripción', 
     rows: '100'
   %>
 

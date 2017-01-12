@@ -14,3 +14,4 @@ echo $RDS_PASSWORD
 echo $RDS_HOSTNAME
 echo $RDS_PORT
 
+cat databases_hem.sql | docker exec -i postgres psql -U postgres
