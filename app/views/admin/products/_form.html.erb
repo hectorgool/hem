@@ -1,12 +1,12 @@
 <%= simple_form_for([:admin, @product]) do |f| %>
 
-  <%= f.input :name, label: '', placeholder: 'Nombre' %>
+  <%= f.input :name, label: 'Nombre', placeholder: 'Nombre' %>
 
   <!--<label for="description">Descripción</label>-->
 
   <%= f.input :description, 
     as: :text, 
-    label: false,
+    label: 'Descripción',
     class: 'form-control input-lg',
     placeholder: 'Descripción', 
     rows: '100'

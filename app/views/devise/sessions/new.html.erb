@@ -18,9 +18,9 @@
           </div>
         <% end %>
         
-        <%= f.input :email, autofocus: true, class: "form-control input-lg" %>
+        <%= f.input :email, autofocus: true, class: "form-control input-lg", label: 'Correo' %>
       
-        <%= f.input :password, autocomplete: "off", class: "form-control input-lg" %>
+        <%= f.input :password, autocomplete: "off", class: "form-control input-lg", label: 'Contraseña' %>
         
         <% if devise_mapping.rememberable? -%>
           <input type="checkbox" name="user[remember_me]" value="1" checked="checked" />
