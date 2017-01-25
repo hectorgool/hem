@@ -66,3 +66,18 @@ gem install io-console
 
 
 docker run --name hem1 -p 80:3000 -d -e RDS_DB_NAME=$RDS_DB_NAME -e RDS_USERNAME=$RDS_USERNAME -e RDS_PASSWORD=$RDS_PASSWORD -e RDS_HOSTNAME=$RDS_HOSTNAME -e RDS_PORT=$RDS_PORT --restart=always hem:1
+
+rails g migration add_price_to_products price:decimal
+rails d migration add_price_to_products price:decimal
+
+rake db:migrate
+
+
+export RDS_DB_NAME=hem
+export RDS_USERNAME=hem
+export RDS_PASSWORD=asdf1234
+export RDS_HOSTNAME=hem.c4x99qmb12el.us-west-2.rds.amazonaws.com
+export RDS_PORT=5432
+
+psql -U hem -d hem -h hem.c4x99qmb12el.us-west-2.rds.amazonaws.com -p 5432
+

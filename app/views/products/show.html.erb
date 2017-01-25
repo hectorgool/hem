@@ -3,7 +3,7 @@
   <% admins_only do %>
     <div class="panel panel-default">
       <div class="panel-body">
-        <%= link_to new_admin_product_url, :class => 'btn btn-info btn-lg pull-right', :id => 'new-product' do %>
+        <%= link_to new_admin_product_url, :class => 'btn btn-success btn-lg btn-block', :id => 'new-product' do %>
           <i class="glyphicon glyphicon-plus new-product"></i> Agregar Producto
         <% end %>
       </div>
@@ -13,16 +13,23 @@
   <div class="panel panel-default">
     <div class="panel-body">
 
-      <dl>
-        <dt>
-          <%= @product.name %>
-        </dt>
-        <dd>
-          <%= @product.description %>
-        </dd>
-      </dl>
+    <h3>
+      <%= @product.name %>
+    </h3>
+    <% if ! @product.price.blank? %>
+      <h4 class="gray">
+        $ <%= @product.price %>
+      </h4>
+    <% end %>
+    <%= @product.description %>
 
-      <%= render "layouts/carousel" %>
+    <!--
+    <a href="#" class="btn btn-default btn-lg btn-block" role="button">
+      Comprar
+    </a>
+    -->
+
+    <%= render "layouts/carousel" %>
 
       <!--
 	    <% if @product.attachments.any? %>

@@ -2,8 +2,6 @@
 
   <%= f.input :name, label: 'Nombre', placeholder: 'Nombre' %>
 
-  <!--<label for="description">Descripción</label>-->
-
   <%= f.input :description, 
     as: :text, 
     label: 'Descripción',
@@ -11,6 +9,8 @@
     placeholder: 'Descripción', 
     rows: '100'
   %>
+
+  <%= f.input :price, label: 'Precio', placeholder: 'Precio' %>
 
   <div class="panel panel-default">
     <div class="panel-body">

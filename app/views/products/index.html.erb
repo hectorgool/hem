@@ -3,7 +3,7 @@
     <div class="panel-body">
       <h1>
         Productos
-        <%= link_to new_admin_product_url, :class => 'btn btn-info btn-lg pull-right', :id => 'new-product' do %>
+        <%= link_to new_admin_product_url, :class => 'btn btn-success btn-lg pull-right', :id => 'new-product' do %>
           <i class="glyphicon glyphicon-plus new-product"></i> Agregar Producto
         <% end %>
       </h1>
@@ -55,8 +55,8 @@
 
               <% if product.attachments.any? %>
                 <% product.attachments.each_with_index do |attachment, index| %>
-                  <% if index+1 == len %>
-                    <%= image_tag attachment.file.url, class: 'img-responsive', alt: product.name %>
+                  <% if index+1 == len %> 
+                    <%= image_tag attachment.file.url, class: 'img-responsive center', alt: product.name %>
                   <% end %>
                 <% end %>
               <% end %>              
@@ -85,18 +85,25 @@
             </p>
             -->
 
-            <dl>
-              <dt>
-                <%= link_to product.name, product %>
-              </dt>
-              <dd>
-                <%= product.description %>
-              </dd>
-            </dl>
+            <h3>
+              <%= link_to product.name, product %>
+            </h3>
+
+            <% if ! product.price.blank? %>
+              <h4 class="gray">
+                $ <%= product.price %>
+              </h4>
+            <% end %>
+      
+            <%= product.description %>
 
           </div>
           <div class="panel-body">
-       
+            <!--
+            <a href="#" class="btn btn-default btn-lg btn-block" role="button">
+              Comprar
+            </a>
+            -->
           </div>
         </div>
       </div>
