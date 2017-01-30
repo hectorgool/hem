@@ -39,16 +39,18 @@ Rails.application.routes.draw do
   root 'products#index'
 
   namespace :admin do
-    
+
     root "products#index"
     resources :products, only: [:new, :create, :edit, :update, :destroy]
-    
+
     resources :users do
       member do
         patch :archive
       end
     end
-    
+
+    resources :categories
+
   end
 
   #santo

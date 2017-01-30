@@ -1,0 +1,7 @@
+<%= simple_form_for([:admin, @category]) do |f| %>
+
+  <%= f.input :name, label: 'Nombre', placeholder: 'Nombre' %>
+  
+  <%= f.button :submit, "Guardar Categoría", class: 'btn btn-success btn-lg btn-block' %>
+
+<% end %>

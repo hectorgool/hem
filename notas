@@ -35,7 +35,7 @@ Some setup you must do manually if you haven't yet:
         <%= image_tag attachment.file.url, class: 'img-responsive', alt: product.name %>
       <% end %>
     <% end %>
-  <% end %>              
+  <% end %>
 
 <% end %>
 
@@ -81,3 +81,47 @@ export RDS_PORT=5432
 
 psql -U hem -d hem -h hem.c4x99qmb12el.us-west-2.rds.amazonaws.com -p 5432
 
+rails g model category name:string
+rails d model category name:string
+
+rails g controller admin/categories index new create show edit update destroy
+rails d controller admin/categories index new create show edit update destroy
+
+namespace :admin do
+get 'categories/index'
+end
+
+namespace :admin do
+get 'categories/new'
+end
+
+namespace :admin do
+get 'categories/create'
+end
+
+namespace :admin do
+get 'categories/show'
+end
+
+namespace :admin do
+get 'categories/edit'
+end
+
+namespace :admin do
+get 'categories/update'
+end
+
+namespace :admin do
+get 'categories/destroy'
+end
+
+
+
+rails g migration CreateJoinTableProductCategory Product Category
+
+rails d migration CreateJoinTableProductCategory Product Category
+
+
+rails g migration create_join_table_product_category product category
+
+rails d migration create_join_table_product_category product category
