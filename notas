@@ -135,3 +135,11 @@ class AddCategoryToProducts < ActiveRecord::Migration
     add_reference :products, :category, index: true, foreign_key: true
   end
 end
+
+
+rails d migration add_category_to_products
+
+rails g migration add_category_to_products
+
+
+rails g migration add_category_to_products category:references
