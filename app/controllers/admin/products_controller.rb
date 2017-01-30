@@ -2,9 +2,6 @@ class Admin::ProductsController < ApplicationController
 
   before_action :set_product, only: [:edit, :update, :destroy]
 
-  #def index
-  #end
-
   def new
     @product = Product.new
     @product.attachments.build
@@ -26,7 +23,6 @@ class Admin::ProductsController < ApplicationController
   end
 
   def edit
-    #@product.attachments.build
     @categories = Category.all.map{|c| [ c.name, c.id ] }
   end
 
