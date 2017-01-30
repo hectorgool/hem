@@ -1,4 +1,4 @@
--- psql -f databases_hem.sql
+-- psql -U postgres -h localhost -f databases_hem.sql
 DROP DATABASE IF EXISTS "hem_development";
 DROP DATABASE IF EXISTS "hem_test";
 DROP DATABASE IF EXISTS "hem_production";

@@ -8,12 +8,14 @@ class Admin::ProductsController < ApplicationController
   def new
     @product = Product.new
     @product.attachments.build
+    @categories = Category.all.map{|c| [ c.name, c.id ] }
   end
 
   def create
     @product = Product.new(product_params)
     @product.approved = true
     @product.user = current_user
+    @product.category_id = params[:category_id]
     if @product.save
       flash[:notice] = "Product has been created."
       redirect_to @product
@@ -25,6 +27,7 @@ class Admin::ProductsController < ApplicationController
 
   def edit
     #@product.attachments.build
+    @categories = Category.all.map{|c| [ c.name, c.id ] }
   end
 
   def update
@@ -53,7 +56,7 @@ class Admin::ProductsController < ApplicationController
     end 
   
     def product_params
-      params.require(:product).permit(:name, :description, :price, :approved, attachments_attributes: [:file, :file_cache])    
+      params.require(:product).permit(:name, :description, :price, :approved, :category_id, attachments_attributes: [:file, :file_cache])    
     end
 
 end

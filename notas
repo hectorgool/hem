@@ -125,3 +125,13 @@ rails d migration CreateJoinTableProductCategory Product Category
 rails g migration create_join_table_product_category product category
 
 rails d migration create_join_table_product_category product category
+
+rails g migration add_columns_to_products
+
+rails g migration add_category_to_products
+
+class AddCategoryToProducts < ActiveRecord::Migration
+  def change
+    add_reference :products, :category, index: true, foreign_key: true
+  end
+end

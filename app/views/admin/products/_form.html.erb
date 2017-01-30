@@ -12,11 +12,15 @@
 
   <%= f.input :price, label: 'Precio', placeholder: 'Precio' %>
 
-  <%= f.select(:category_ids) do %>
-    <% Category.all.each do |c| -%>
-      <%= content_tag(:option, c.id, value: c.name) %>
-    <% end %>
-  <% end %>
+  <%= f.label 'Categoría' %>
+  <%= 
+    f.select(:category_id, 
+    options_for_select(@categories, @product.category_id), 
+    {include_blank: "Select something"}, 
+    { :class => 'form-control input-lg' })
+  %>
+
+  <br>
 
   <div class="panel panel-default">
     <div class="panel-body">
