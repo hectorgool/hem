@@ -143,3 +143,6 @@ rails g migration add_category_to_products
 
 
 rails g migration add_category_to_products category:references
+
+rails g controller admin/orders index
+rails d controller admin/orders index
