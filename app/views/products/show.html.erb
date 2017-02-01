@@ -23,48 +23,22 @@
       <% end %>
       <%= @product.description %>
 
+      <!--
       <a href="#" class="btn btn-default btn-lg btn-block" role="button">
         Comprar
       </a>
+      -->
 
-      <%=
-        #render "layouts/carousel"
-      %>
-
-      <!--
       <% if @product.attachments.any? %>
         <% @product.attachments.each_with_index do |attachment, index| %>
 
           <div class="item <%= index == 0 ? 'active' : '' %>">
-            <%= image_tag attachment.file.url, class: 'img-responsive', alt: @product.name %>
+            <%= image_tag attachment.file.url, class: 'img-responsive center', alt: @product.name %>
           </div>
 
         <% end %>
       <% end %>
-      -->
-
-      <% if @product.attachments.any? %>
-        <% @product.attachments.in_groups_of(2, false).each do |group| %>
-          <div class="row">
-            <% group.attachments.each_with_index do |attachment, index| %>
-
-              <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
-                <div class="panel panel-default">
-                  <div class="panel-body_image">
-
-                    <div class="item <%= index == 0 ? 'active' : '' %>">
-                      <%= image_tag attachment.file.url, class: 'img-responsive', alt: @product.name %>
-                    </div>
-
-                  </div>
-                </div>
-              </div>
-
-            <% end %>
-          </div>
-        <% end %>
-      <% end %>
-
+      
   	</div>
   </div>
 </div>

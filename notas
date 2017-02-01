@@ -148,3 +148,30 @@ rails g controller admin/orders index
 rails d controller admin/orders index
 
 http://stackoverflow.com/questions/5371126/configure-environment-to-use-file-system-locally-and-amazon-on-heroku
+
+
+UPDATE "products" SET category_id = 4 WHERE category_id = 4;
+
+      <!--
+      <% if @product.attachments.any? %>
+        <% @product.attachments.in_groups_of(2, false).each do |group| %>
+          <div class="row">
+            <% group.attachments.each_with_index do |attachment, index| %>
+
+              <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+                <div class="panel panel-default">
+                  <div class="panel-body_image">
+
+                    <div class="item <%= index == 0 ? 'active' : '' %>">
+                      <%= image_tag attachment.file.url, class: 'img-responsive', alt: @product.name %>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+
+            <% end %>
+          </div>
+        <% end %>
+      <% end %>
+      -->

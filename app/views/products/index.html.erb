@@ -11,10 +11,11 @@
   </div>
 <% end %>
 
-<br />
+<hr class="hr_green">
 <%=
-  render "layouts/search"
+  #render "layouts/search"
 %>
+<hr class="hr_red">
 
 <% @products.in_groups_of(4, false).each do |group| %>
   <div class="row">
@@ -66,29 +67,6 @@
 
           <div class="panel-body panel-height">
 
-            <p class="text-right">
-
-              <!--
-              <a class="btn btn-social-icon btn-lg btn-default">
-                <i class="fa fa-twitter"></i>
-              </a>
-              -->
-              <!--
-              <a class="btn btn-social-icon btn-lg btn-default">
-                <i class="fa fa-pinterest"></i>
-              </a>
-              -->
-              <a class="btn btn-social-icon btn-lg btn-default">
-                <i class="fa fa-facebook"></i>
-              </a>
-              <!--
-              <a class="btn btn-social-icon btn-lg btn-default">
-                <i class="fa fa-google-plus"></i>
-              </a>
-              -->
-            </p>
-
-
             <h3>
               <%= link_to product.name, product %>
             </h3>
@@ -101,13 +79,24 @@
 
             <%= product.description %>
 
+            <p class="text-right">
+            <!--
+              <a class="btn btn-social-icon btn-lg btn-default">
+                <i class="fa fa-twitter"></i>
+              </a>
+              <a class="btn btn-social-icon btn-lg btn-default">
+                <i class="fa fa-facebook"></i>
+              </a>
+            -->
+            </p>
+
           </div>
           <div class="panel-body">
-
+            <!--
             <a href="#" class="btn btn-default btn-lg btn-block" role="button">
               Comprar
             </a>
-
+            -->
           </div>
         </div>
       </div>
