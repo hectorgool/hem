@@ -146,3 +146,5 @@ rails g migration add_category_to_products category:references
 
 rails g controller admin/orders index
 rails d controller admin/orders index
+
+http://stackoverflow.com/questions/5371126/configure-environment-to-use-file-system-locally-and-amazon-on-heroku
