@@ -1,23 +1,13 @@
--- psql -U postgres -h localhost -f databases_hem.sql
-DROP DATABASE IF EXISTS "hem_development";
-DROP DATABASE IF EXISTS "hem_test";
-DROP DATABASE IF EXISTS "hem_production";
+-- mysql -u root -v < databases_hem.sql
 
-CREATE DATABASE "hem_development" WITH ENCODING 'UTF8';
-CREATE DATABASE "hem_test" WITH ENCODING 'UTF8';
-CREATE DATABASE "hem_production" WITH ENCODING 'UTF8';
+DROP DATABASE IF EXISTS hem_development;
+CREATE DATABASE hem_development CHARACTER SET utf8 COLLATE utf8_general_ci;
 
-DROP USER "hem";
-CREATE USER "hem" WITH PASSWORD 'asdfasdf';
-ALTER USER "hem" WITH SUPERUSER;
+DROP DATABASE IF EXISTS `hem_test`;
+CREATE DATABASE hem_test CHARACTER SET utf8 COLLATE utf8_general_ci;
 
-GRANT ALL PRIVILEGES ON DATABASE "hem_development" TO hem;
-GRANT ALL PRIVILEGES ON DATABASE "hem_test" TO hem;
-GRANT ALL PRIVILEGES ON DATABASE "hem_production" TO hem;
+DROP DATABASE IF EXISTS `hem_production`;
+CREATE DATABASE hem_production CHARACTER SET utf8 COLLATE utf8_general_ci;
 
-ALTER DATABASE "hem_development" OWNER TO hem;
-ALTER DATABASE "hem_test" OWNER TO hem;
-ALTER DATABASE "hem_production" OWNER TO hem;
-
-ALTER USER hem CREATEDB;
-
+DROP USER 'hem'@'localhost';
+GRANT ALL PRIVILEGES ON *.* to hem@localhost identified by 'asdfasdf' WITH GRANT option;
